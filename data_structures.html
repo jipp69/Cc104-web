@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC105: Data Structures (Interactive)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container">
+            <h1>CC104 DSA</h1>
+            <div class="nav-links">
+                <a href="index.html">Team</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="pseudocode.html">Pseudocode</a>
+                <a href="data_structures.html" class="active">Data Structures</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="interactive-ds" class="section">
+            <div class="container">
+                <h2 class="page-title">Interactive Data Structures</h2>
+
+                <div class="lang-topic interactive-ds-box">
+                    <h3>Stacks (LIFO: Last-In, First-Out)</h3>
+                    
+                    <div class="explanation-box">
+                        <h4>Explanation & Conceptual Example:</h4>
+                        <p>A Stack is a linear data structure that follows the LIFO (Last-In, First-Out) principle. Imagine a stack of dinner plates; you can only add (Push) a new plate to the top, and you can only remove (Pop) the plate that was last placed on top. </p>
+                        <p><strong>Example:</strong> Pushing 'A', then 'B', then 'C'. The Pop order will be 'C', then 'B', then 'A'.</p>
+                    </div>
+
+                    <hr>
+                    
+                    <h4>Interactive Stack Simulation:</h4>
+                    <p>Use the controls below to manipulate the stack (Push, Pop, and Peek).</p>
+                    <div class="interactive-area">
+                        <input type="text" id="stack-input" placeholder="Enter value to push (e.g., 10)">
+                        <button onclick="stackPush()">Push</button>
+                        <button onclick="stackPop()">Pop</button>
+                        <button onclick="stackPeek()">Peek</button>
+                    </div>
+                    <div class="output-box">
+                        <h4>Stack State:</h4>
+                        <pre id="stack-output">Stack is empty.</pre>
+                        <p id="stack-message" class="message"></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="lang-topic interactive-ds-box">
+                    <h3>Binary Tree Traversal (Hierarchical Structure)</h3>
+                    
+                    <div class="explanation-box">
+                        <h4>Explanation & Conceptual Example:</h4>
+                        <p>A Tree is a non-linear data structure where data is organized hierarchically and connected by edges. In a Binary Tree, each node has at most two children (left and right). </p>
+                        <p><strong>Example Tree Structure:</strong> A tree with Root (50), Left Child (30), and Right Child (70). Traversal methods dictate the order in which these nodes are visited.</p>
+                        <ul>
+                            <li>Inorder: Visits nodes in ascending order (30, 50, 70).</li>
+                            <li>**Preorder: Visits Root first (50, 30, 70).</li>
+                            <li*Postorder: Visits Root last (30, 70, 50).</li>
+                        </ul>
+                    </div>
+
+                    <hr>
+
+                    <h4>Interactive Tree Traversal:</h4>
+                    <p>A simple Binary Tree (Root: 50, Left: 30, Right: 70) is pre-built. Click the buttons to see the traversal output.</p>
+                    <div class="interactive-area">
+                        <button onclick="treeTraverse('inorder')">Inorder Traversal</button>
+                        <button onclick="treeTraverse('preorder')">Preorder Traversal</button>
+                        <button onclick="treeTraverse('postorder')">Postorder Traversal</button>
+                        <button onclick="treeClear()">Clear Output</button>
+                    </div>
+                    <div class="output-box">
+                        <h4>Traversal Output:</h4>
+                        <pre id="tree-output">Click a button to traverse the tree.</pre>
+                    </div>
+                   
+                
+                <hr>
+
+                <h2 class="page-title secondary-title">Informational Data Structures (Arrays & Queues)</h2>
+
+                <div class="lang-topic info-topic">
+                    <h3>C++ Arrays </h3>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>1. Fixed-Size (Static) Array</h4>
+                            <p>Memory is allocated at compile time. Size cannot change during runtime.</p>
+                        </div>
+                        <pre class="code-block"><code>// C++ Fixed-Size Array
+int fixed_array[5] = {10, 20, 30, 40, 50};</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>2. Resizable (Dynamic) Array - `std::vector`</h4>
+                            <p>An array that can grow or shrink in size at runtime, handled using the standard library container `std::vector`.</p>
+                        </div>
+                        <pre class="code-block"><code>// C++ Dynamic Array
+#include &lt;vector&gt;
+std::vector&lt;int&gt; dynamic_array; 
+dynamic_array.push_back(3);</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>3. One-Dimensional (1D) Array</h4>
+                            <p>A linear list of elements stored in contiguous memory locations. Elements are accessed using a single index.</p>
+                        </div>
+                        <pre class="code-block"><code>// C++ 1D Array
+int grades[4] = {88, 92, 75, 95};</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>4. Multi-Dimensional (2D) Array / Matrix</h4>
+                            <p>An array of arrays, often used to represent grids or tables (matrices). Accessed using row and column indices.</p>
+                        </div>
+                        <pre class="code-block"><code>// C++ 2D Array
+int matrix[3][2] = {{1, 2}, {3, 4}, {5, 6}};</code></pre>
+                    </div>
+                </div>
+
+                <div class="lang-topic info-topic">
+                    <h3>Python Arrays (Lists) </h3>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>1. Standard List (Dynamic/Resizable)</h4>
+                            <p>Python's built-in `list` is inherently dynamic and resizable, ideal for general collections.</p>
+                        </div>
+                        <pre class="code-block"><code># Python Standard List
+dynamic_list = [10, 'hello', 3.14]</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>2. Fixed-Type Array (`array` module)</h4>
+                            <p>Used for storing only homogeneous data (all same type) more efficiently than a standard list, similar to a C array.</p>
+                        </div>
+                        <pre class="code-block"><code># Python Fixed-Type Array
+from array import array 
+fixed_array = array('i', [1, 2, 3])</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>3. One-Dimensional (1D) Array</h4>
+                            <p>A single sequence of elements, which is a standard Python list containing scalar values.</p>
+                        </div>
+                        <pre class="code-block"><code># Python 1D Array
+ages = [18, 22, 25, 30]</code></pre>
+                    </div>
+                    
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>4. Multi-Dimensional (2D) Array / Matrix</h4>
+                            <p>A list of lists, representing rows and columns, commonly used for matrix operations.</p>
+                        </div>
+                        <pre class="code-block"><code># Python 2D Array
+matrix = [[1, 2, 3], [4, 5, 6]]</code></pre>
+                    </div>
+                </div>
+
+                 <div class="lang-topic info-topic">
+                    <h3>Queues (FIFO: First-In, First-Out) - C++ & Python</h3>
+                    <div class="explanation-box">
+                        <p>Queues follow the FIFO principle. Elements are added to the rear (enqueue) and removed from the front (dequeue). </p>
+                    </div>
+                    <div class="code-pair">
+                        <div class="explanation-box">
+                            <h4>C++ Queue Operations</h4>
+                            <p>Elements are inserted at the back (`push`) and removed from the front (`pop`) using `std::queue`.</p>
+                        </div>
+                        <pre class="code-block"><code>// C++ Queue Implementation (Informational)
+#include &lt;queue&gt;
+std::queue&lt;std::string&gt; q;
+q.push("Task 1"); // Enqueue
+q.pop(); // Dequeue
+                        </code></pre>
+                    </div>
+                    <div class="code-pair">
+                         <div class="explanation-box">
+                            <h4>Python Queue Operations</h4>
+                            <p>The `collections.deque` is used for efficient FIFO operations using `append` (enqueue) and `popleft` (dequeue).</p>
+                        </div>
+                        <pre class="code-block"><code># Python Queue Implementation (Informational)
+from collections import deque
+queue = deque(["A", "B"])
+queue.append("C")    # Enqueue
+queue.popleft() # Dequeue
+                        </code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

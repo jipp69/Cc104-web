@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC105: Pseudocode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container">
+            <h1>CC104 DSA</h1>
+            <div class="nav-links">
+                <a href="index.html">Team</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="pseudocode.html" class="active">Pseudocode</a>
+                <a href="data_structures.html">Data Structures</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="pseudocode" class="section">
+            <div class="container">
+                <h2 class="page-title">10 Core Algorithms (Pseudocode & Interactive Explanation)</h2>
+                
+                <div class="content-grid">
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex1')">
+                        <h4>1. Linear Search Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION LinearSearch(Array, Target):
+    FOR i FROM 0 TO length(Array) - 1:
+        IF Array[i] == Target:
+            RETURN i
+    RETURN -1
+                        </code></pre>
+                        <div id="p-ex1" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This pseudocode uses a simple loop (`FOR`) to iterate through every index of the array until the `Target` element is found, returning its position (`i`). If the loop finishes without a match, it returns `-1`.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex2')">
+                        <h4>2. Binary Search Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION BinarySearch(Array, Target):
+    Start = 0, End = length(Array) - 1
+    WHILE Start <= End:
+        Mid = (Start + End) / 2
+        IF Array[Mid] == Target:
+            RETURN Mid
+        ELSE IF Array[Mid] < Target:
+            Start = Mid + 1
+        ELSE:
+            End = Mid - 1
+    RETURN -1
+                        </code></pre>
+                        <div id="p-ex2" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This code iteratively cuts the search space in half (`WHILE Start <= End`). It checks the `Mid` point and adjusts `Start` or `End` based on whether the `Target` is greater or smaller than the value at `Mid`.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex3')">
+                        <h4>3. Bubble Sort Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION BubbleSort(Array):
+    n = length(Array)
+    FOR i FROM 0 TO n - 2:
+        FOR j FROM 0 TO n - i - 2:
+            IF Array[j] > Array[j + 1]:
+                Swap(Array[j], Array[j + 1])
+                        </code></pre>
+                        <div id="p-ex3" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This uses two nested loops. The inner loop compares adjacent elements and swaps them if they are out of order, causing the largest unsorted element to "bubble up" to its correct position in each pass of the outer loop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex4')">
+                        <h4>4. Selection Sort Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION SelectionSort(Array):
+    n = length(Array)
+    FOR i FROM 0 TO n - 2:
+        Min_Index = i
+        FOR j FROM i + 1 TO n - 1:
+            IF Array[j] < Array[Min_Index]:
+                Min_Index = j
+        Swap(Array[i], Array[Min_Index])
+                        </code></pre>
+                        <div id="p-ex4" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>The outer loop tracks the current position (`i`). The inner loop searches for the smallest remaining element (`Min_Index`) in the rest of the array. Once found, it swaps that smallest element with the element at the current position (`Array[i]`).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex5')">
+                        <h4>5. Factorial Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION Factorial(n):
+    Result = 1
+    FOR i FROM 1 TO n:
+        Result = Result * i
+    RETURN Result
+                        </code></pre>
+                        <div id="p-ex5" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This is the iterative approach. It initializes `Result` to $1$ (since $0! = 1$) and then multiplies the `Result` by every integer from 1 up to and including $n$.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex6')">
+                        <h4>6. Fibonacci Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION Fibonacci(n):
+    IF n <= 1: RETURN n
+    RETURN Fibonacci(n - 1) + Fibonacci(n - 2)
+                        </code></pre>
+                        <div id="p-ex6" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This is the recursive approach. It defines the base cases for $n=0$ and $n=1$, and then calls itself to calculate the two preceding numbers, summing them to find the $n$-th number.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex7')">
+                        <h4>7. Euclidean Algorithm Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION GCD(a, b):
+    WHILE b != 0:
+        temp = b
+        b = a MOD b
+        a = temp
+    RETURN a
+                        </code></pre>
+                        <div id="p-ex7" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This code repeatedly replaces the larger number (`a`) with the smaller number (`b`) and the smaller number (`b`) with the remainder of their division (`a MOD b`). The loop continues until the remainder (`b`) is zero, at which point `a` holds the GCD.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex8')">
+                        <h4>8. Palindrome Check Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION IsPalindrome(String):
+    Left = 0, Right = length(String) - 1
+    WHILE Left < Right:
+        IF String[Left] != String[Right]:
+            RETURN FALSE
+        Left = Left + 1
+        Right = Right - 1
+    RETURN TRUE
+                        </code></pre>
+                        <div id="p-ex8" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>It uses two pointers, `Left` (start) and `Right` (end), moving inward (`WHILE Left < Right`). If the characters at these pointers ever do not match, the string is not a palindrome and it immediately returns `FALSE`.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex9')">
+                        <h4>9. Sum Array Elements Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION SumArray(Array):
+    Total = 0
+    FOR element IN Array:
+        Total = Total + element
+    RETURN Total
+                        </code></pre>
+                        <div id="p-ex9" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>This is a simple aggregation loop. It initializes a counter (`Total = 0`) and then iterates through every item in the `Array`, adding its value to the `Total` accumulator.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'p-ex10')">
+                        <h4>10. Reverse String Pseudocode <span class="toggle-icon">+</span></h4>
+                        <pre><code>FUNCTION ReverseString(InputString):
+    NewString = ""
+    FOR i FROM length(InputString) - 1 DOWNTO 0:
+        NewString = NewString + InputString[i]
+    RETURN NewString
+                        </code></pre>
+                        <div id="p-ex10" class="example-content">
+                            <hr>
+                            <h5>Short Explanation:</h5>
+                            <p>The loop starts from the last index (`length(InputString) - 1`) and decrements (`DOWNTO 0`). It concatenates each character to the `NewString` in reverse order, effectively flipping the input.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

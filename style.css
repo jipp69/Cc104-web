@@ -1,0 +1,428 @@
+/* Custom Styles for CC105 Resource */
+
+:root {
+    --primary-color: #3A0CA3; /* Deep Purple */
+    --secondary-color: #4CC9F0; /* Bright Blue */
+    --text-color: #333;
+    --bg-color: #f4f7f6;
+    --code-bg: #e9eef2;
+    --card-bg: #fff;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------- */
+/* 1. NAVBAR STYLES */
+/* ---------------------------------------------------- */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ---------------------------------------------------- */
+/* 2. GENERAL SECTIONS & TITLES */
+/* ---------------------------------------------------- */
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.secondary-title {
+    margin-top: 50px;
+    color: #555;
+    font-size: 1.8rem;
+}
+
+/* ---------------------------------------------------- */
+/* 3. FRONT PAGE / HERO STYLES */
+/* ---------------------------------------------------- */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.team-header {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Team Grid (Card Layout) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+    max-width: 1000px;
+    margin: 30px auto 50px;
+    text-align: center;
+}
+
+.team-card {
+    background: white; /* Card background */
+    padding: 30px 20px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+/* End Team Grid Styles */
+
+
+.start-links {
+    margin-top: 30px;
+}
+.start-links p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.start-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 10px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: transform 0.3s, background 0.3s;
+}
+.start-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------- */
+/* 4. ALGORITHMS & PSEUDOCODE CARDS (Click-to-Reveal) */
+/* ---------------------------------------------------- */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.algo-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer; /* Indicates it's clickable */
+    transition: box-shadow 0.2s;
+    height: fit-content; /* Adjust height based on content */
+}
+
+.algo-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.algo-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none; /* Removed dashed border for cleaner look */
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s;
+}
+.algo-card.active .toggle-icon {
+    transform: rotate(45deg); /* Changes '+' to 'X' */
+}
+.example-content {
+    display: none; /* Initially hidden, controlled by script.js */
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.example-content hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+/* ---------------------------------------------------- */
+/* 5. DATA STRUCTURES STYLING */
+/* ---------------------------------------------------- */
+
+.lang-topic {
+    margin-bottom: 60px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.lang-topic h3 {
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Informational Code Pairs (Arrays and Queues) */
+.code-pair {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    border: 1px solid var(--code-bg);
+    padding: 15px;
+    border-radius: 8px;
+}
+.explanation-box { 
+    flex: 1; 
+    padding-right: 15px; 
+}
+.code-block { 
+    flex: 1; 
+    margin-top: 0 !important; 
+}
+
+
+/* Interactive DS Boxes */
+.interactive-ds-box {
+    border: 2px solid var(--primary-color);
+    padding: 30px;
+}
+.interactive-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.interactive-area input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+.interactive-area button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.interactive-area button:hover {
+    background: #00b3d1;
+    color: white;
+}
+
+/* Output Styling for Interactive DS */
+.output-box {
+    background: var(--code-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+}
+.output-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.message {
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.message.success {
+    background: #e6ffe6;
+    color: var(--success-color);
+}
+.message.error {
+    background: #ffe6e6;
+    color: var(--danger-color);
+}
+.note-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    padding: 10px;
+    border-left: 3px solid var(--secondary-color);
+    background: #f8f8f8;
+}
+
+/* General Code Blocks */
+pre {
+    background: var(--code-bg);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap; /* Ensure pre tags wrap long lines */
+}
+
+code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #0055a4;
+}
+
+
+/* ---------------------------------------------------- */
+/* 6. RESPONSIVENESS */
+/* ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .code-pair {
+        flex-direction: column;
+    }
+    .explanation-box {
+        padding-right: 0;
+    }
+    .interactive-area {
+        flex-wrap: wrap; /* Allow buttons/input to wrap on smaller screens */
+    }
+    .interactive-area button {
+        flex-grow: 1;
+    }
+    .team-grid {
+        /* Switch to 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Navbar stack */
+    #navbar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-links a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    /* General spacing */
+    .section {
+        padding: 60px 0;
+    }
+    
+    /* Team section single column */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Hero/Start links */
+    .start-btn {
+        margin: 10px 0;
+        display: block;
+    }
+    
+    /* Algorithm cards single column */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}

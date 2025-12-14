@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC105: Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container">
+            <h1>CC104 DSA</h1>
+            <div class="nav-links">
+                <a href="index.html">Team</a>
+                <a href="algorithms.html" class="active">Algorithms</a>
+                <a href="pseudocode.html">Pseudocode</a>
+                <a href="data_structures.html">Data Structures</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="algorithms" class="section">
+            <div class="container">
+                <h2 class="page-title">10 Core Algorithms (Explanation & Interactive Example)</h2>
+                
+                <div class="content-grid">
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex1')">
+                        <h4>1. Linear Search <span class="toggle-icon">+</span></h4>
+                        <p>Checks every element in a list sequentially until a match is found or the end of the list is reached. [attachment_0](attachment)</p>
+                        <div id="ex1" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Searching for the number **7** in the array **[2, 5, 7, 9, 15]**. The search starts at index 0, checks 2, 5, and stops at index 2 when **7** is found.</p>
+                        </div>
+                    </div>
+
+                    <div class="algo-card" onclick="toggleExample(this, 'ex2')">
+                        <h4>2. Binary Search <span class="toggle-icon">+</span></h4>
+                        <p>Efficiently locates an item in a **sorted** list by repeatedly dividing the search interval in half. </p>
+                        <div id="ex2" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Searching for **30** in **[10, 20, 30, 40, 50]**. Step 1: Check the middle (30). Found immediately. If searching for 45, it would eliminate the left half (10, 20, 30) and check the middle of the remaining list.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex3')">
+                        <h4>3. Bubble Sort <span class="toggle-icon">+</span></h4>
+                        <p>A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. </p>
+                        <div id="ex3" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Sorting **[5, 1, 4]**. <br>Pass 1: (5, 1) swap $\rightarrow$ [1, 5, 4]. (5, 4) swap $\rightarrow$ **[1, 4, 5]**.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex4')">
+                        <h4>4. Selection Sort <span class="toggle-icon">+</span></h4>
+                        <p>Finds the minimum element from the unsorted portion of the list and swaps it with the element at the current position. </p>
+                        <div id="ex4" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Sorting **[5, 1, 4]**. <br>Step 1: Find min (1), swap with 5 $\rightarrow$ **[1, 5, 4]**. <br>Step 2: Find min from [5, 4] (which is 4), swap with 5 $\rightarrow$ **[1, 4, 5]**.</p>
+                        </div>
+                    </div>
+
+                    <div class="algo-card" onclick="toggleExample(this, 'ex5')">
+                        <h4>5. Factorial (Iterative) <span class="toggle-icon">+</span></h4>
+                        <p>Calculates the product of all positive integers less than or equal to a given positive integer (n!).</p>
+                        <div id="ex5" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Calculate $4!$. The algorithm computes $1 \times 2 \times 3 \times 4$, resulting in **24**.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex6')">
+                        <h4>6. Fibonacci Sequence <span class="toggle-icon">+</span></h4>
+                        <p>Generates a sequence where each number is the sum of the two preceding ones, usually starting with 0 and 1. </p>
+                        <div id="ex6" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>The sequence starts $F(0)=0$, $F(1)=1$. <br>$F(2) = F(1) + F(0) = 1 + 0 = 1$. <br>$F(3) = F(2) + F(1) = 1 + 1 = 2$.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex7')">
+                        <h4>7. Euclidean Algorithm (GCD) <span class="toggle-icon">+</span></h4>
+                        <p>Computes the greatest common divisor (GCD) of two integers using repeated division/subtraction.</p>
+                        <div id="ex7" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Find $\text{GCD}(48, 18)$. <br> $48 = 2 \times 18 + 12$. <br> $18 = 1 \times 12 + 6$. <br> $12 = 2 \times 6 + 0$. <br> The last non-zero remainder is **6**.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex8')">
+                        <h4>8. Palindrome Check <span class="toggle-icon">+</span></h4>
+                        <p>Determines if a string or number reads the same forwards and backwards.</p>
+                        <div id="ex8" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Checking "racecar". The algorithm compares 'r' (start) with 'r' (end), 'a' with 'a', 'c' with 'c'. Since all match, it returns **TRUE**.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex9')">
+                        <h4>9. Sum Array Elements <span class="toggle-icon">+</span></h4>
+                        <p>Computes the total sum of all numerical values present within an array or list by iteration.</p>
+                        <div id="ex9" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Summing **[1, 5, 10, 2]**. The algorithm starts at $0$, then adds $1 \rightarrow 1$, adds $5 \rightarrow 6$, adds $10 \rightarrow 16$, adds $2 \rightarrow 18$. The total sum is **18**.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="algo-card" onclick="toggleExample(this, 'ex10')">
+                        <h4>10. Reverse String <span class="toggle-icon">+</span></h4>
+                        <p>Creates a new string by iterating through the original string from end to start.</p>
+                        <div id="ex10" class="example-content">
+                            <hr>
+                            <h5>Short Example:</h5>
+                            <p>Reversing "HELLO". The algorithm reads 'O', then 'L', then 'L', then 'E', then 'H', resulting in **OLLEH**.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
