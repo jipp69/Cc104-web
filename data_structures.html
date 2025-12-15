@@ -54,23 +54,63 @@
                 <hr>
 
                 <div class="lang-topic interactive-ds-box">
+                    <h3>Queues (FIFO: First-In, First-Out)</h3>
+                    
+                    <div class="explanation-box">
+                        <h4>Explanation & Conceptual Example:</h4>
+                        <p>A Queue is a linear data structure that follows the FIFO (First-In, First-Out) principle. Imagine people waiting in a line; the first person in line (First-In) is the first person to be served (First-Out). </p>
+                        <p><strong>Example:</strong> Enqueuing 'A', then 'B', then 'C'. The Dequeue order will be 'A', then 'B', then 'C'.</p>
+                    </div>
+
+                    <hr>
+                    
+                    <h4>Interactive Queue Simulation:</h4>
+                    <p>Use the controls below to manipulate the queue (Enqueue, Dequeue, and Peek).</p>
+                    <div class="interactive-area">
+                        <input type="text" id="queue-input" placeholder="Enter value to enqueue (e.g., Task)">
+                        <button onclick="queueEnqueue()">Enqueue</button>
+                        <button onclick="queueDequeue()">Dequeue</button>
+                        <button onclick="queuePeek()">Peek Front</button>
+                    </div>
+                    <div class="output-box">
+                        <h4>Queue State (Front → Rear):</h4>
+                        <pre id="queue-output">Queue is empty.</pre>
+                        <p id="queue-message" class="message"></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="lang-topic interactive-ds-box">
                     <h3>Binary Tree Traversal (Hierarchical Structure)</h3>
                     
                     <div class="explanation-box">
                         <h4>Explanation & Conceptual Example:</h4>
                         <p>A Tree is a non-linear data structure where data is organized hierarchically and connected by edges. In a Binary Tree, each node has at most two children (left and right). </p>
-                        <p><strong>Example Tree Structure:</strong> A tree with Root (50), Left Child (30), and Right Child (70). Traversal methods dictate the order in which these nodes are visited.</p>
+                        
+                        <pre id="tree-structure-visual" style="background: var(--code-bg); padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+// Example Binary Search Tree Structure used for simulation:
+// Values: 10, 20, 30, 40, 50, 60
+//
+//               40 (Root)
+//              /   \
+//            20      50
+//           / \       \
+//         10   30      60
+                        </pre>
+                        
+                        <p><strong>Example Tree Structure:</strong> A Binary Search Tree containing values **10, 20, 30, 40, 50, 60** with 40 as the root. Traversal methods dictate the order in which these nodes are visited.</p>
                         <ul>
-                            <li>Inorder: Visits nodes in ascending order (30, 50, 70).</li>
-                            <li>**Preorder: Visits Root first (50, 30, 70).</li>
-                            <li*Postorder: Visits Root last (30, 70, 50).</li>
+                            <li>Inorder: Visits nodes in ascending order (10, 20, 30, 40, 50, 60).</li>
+                            <li>**Preorder: Visits Root first (40, 20, 10, 30, 50, 60).</li>
+                            <li>Postorder: Visits Root last (10, 30, 20, 60, 50, 40).</li>
                         </ul>
                     </div>
 
                     <hr>
 
                     <h4>Interactive Tree Traversal:</h4>
-                    <p>A simple Binary Tree (Root: 50, Left: 30, Right: 70) is pre-built. Click the buttons to see the traversal output.</p>
+                    <p>Click the buttons to see the traversal output and the step-by-step visual.</p>
                     <div class="interactive-area">
                         <button onclick="treeTraverse('inorder')">Inorder Traversal</button>
                         <button onclick="treeTraverse('preorder')">Preorder Traversal</button>
@@ -78,14 +118,16 @@
                         <button onclick="treeClear()">Clear Output</button>
                     </div>
                     <div class="output-box">
-                        <h4>Traversal Output:</h4>
+                        <h4>Traversal Path:</h4>
                         <pre id="tree-output">Click a button to traverse the tree.</pre>
+                        <h4>Traversal Steps (Visual Representation):</h4>
+                        <pre id="tree-visual-steps" class="code-block" style="white-space: pre-wrap;"></pre>
                     </div>
-                   
+                </div>
                 
                 <hr>
 
-                <h2 class="page-title secondary-title">Informational Data Structures (Arrays & Queues)</h2>
+                <h2 class="page-title secondary-title">Informational Data Structures (Arrays)</h2>
 
                 <div class="lang-topic info-topic">
                     <h3>C++ Arrays </h3>
@@ -167,37 +209,6 @@ ages = [18, 22, 25, 30]</code></pre>
                         </div>
                         <pre class="code-block"><code># Python 2D Array
 matrix = [[1, 2, 3], [4, 5, 6]]</code></pre>
-                    </div>
-                </div>
-
-                 <div class="lang-topic info-topic">
-                    <h3>Queues (FIFO: First-In, First-Out) - C++ & Python</h3>
-                    <div class="explanation-box">
-                        <p>Queues follow the FIFO principle. Elements are added to the rear (enqueue) and removed from the front (dequeue). </p>
-                    </div>
-                    <div class="code-pair">
-                        <div class="explanation-box">
-                            <h4>C++ Queue Operations</h4>
-                            <p>Elements are inserted at the back (`push`) and removed from the front (`pop`) using `std::queue`.</p>
-                        </div>
-                        <pre class="code-block"><code>// C++ Queue Implementation (Informational)
-#include &lt;queue&gt;
-std::queue&lt;std::string&gt; q;
-q.push("Task 1"); // Enqueue
-q.pop(); // Dequeue
-                        </code></pre>
-                    </div>
-                    <div class="code-pair">
-                         <div class="explanation-box">
-                            <h4>Python Queue Operations</h4>
-                            <p>The `collections.deque` is used for efficient FIFO operations using `append` (enqueue) and `popleft` (dequeue).</p>
-                        </div>
-                        <pre class="code-block"><code># Python Queue Implementation (Informational)
-from collections import deque
-queue = deque(["A", "B"])
-queue.append("C")    # Enqueue
-queue.popleft() # Dequeue
-                        </code></pre>
                     </div>
                 </div>
 
