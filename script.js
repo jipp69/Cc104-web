@@ -87,7 +87,7 @@ function stackPush() {
         return;
     }
     if (stackArray.length >= MAX_SIZE) {
-        updateStackDisplay('Error: Stack Overflow! Max size reached (10).');
+        updateStackDisplay('Error: Stack Overflow! Max size reached.');
         return;
     }
 
