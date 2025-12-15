@@ -368,20 +368,21 @@ code {
 }
 
 /* ---------------------------------------------------- */
-/* (6. FOOTER STYLES - MODIFIED FOR SIZE AND CENTER) */
+/* 6. FOOTER STYLES (CORRECTED & ENHANCED) */
 /* ---------------------------------------------------- */
-
 footer {
+    /* Base footer styling */
     background: var(--primary-color); 
     color: white;
     padding: 20px 0; /* Increased padding */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
 
+/* Specific styling for the text inside the footer (BIGGER & CENTERED) */
 footer .container p {
-    font-size: 1.2rem; /* Make the text bigger */
-    font-weight: 600; /* Make it bolder for emphasis */
-    text-align: center; /* Ensure it is centered within the container */
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    text-align: center;
     margin: 0; 
 }
 
@@ -398,15 +399,18 @@ footer .container p {
         padding-right: 0;
     }
     .interactive-area {
-        flex-wrap: wrap; /* Allow buttons/input to wrap on smaller screens */
+        flex-wrap: wrap; 
     }
     .interactive-area button {
         flex-grow: 1;
     }
     .team-grid {
-        /* Switch to 2 columns on medium screens */
         grid-template-columns: repeat(2, 1fr);
     }
+    /* Mobile footer text should be slightly smaller */
+    footer .container p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -443,9 +447,4 @@ footer .container p {
     .content-grid {
         grid-template-columns: 1fr;
     }
-    
-    /* Footer adjustment for small screens (optional, but good practice) */
-    footer .container p {
-        font-size: 1rem;
-    }
 }
