@@ -850,25 +850,37 @@ code {
 
         grid-template-columns: 1fr;
 
-        /* --- Footer Styling for CC104 DSA Portfolio --- */
-/* 1. Target the main footer element (if you have one) */
-footer {
-    /* Ensure the footer spans the full width */
-    width: 100%;
-    /* This command centers the text content horizontally */
+    /* --- Target the main footer element --- */
+.main-footer {
+    /* Set background color and text color for contrast */
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    
+    /* Center the text content inside the footer */
     text-align: center;
-    /* Optional: Add some basic styling */
-    padding: 10px 0; 
-    background-color: #f4f4f4; /* Light background for visibility */
-    color: #333;
-    /* You may need to set position: fixed/absolute depending on your layout */
+    
+    /* Add padding for a "bigger" feel and visual space */
+    padding: 20px 0; 
+    
+    /* Set a slightly larger font size */
+    font-size: 1.1em; /* 1.1 times the default font size */
+    
+    /* Subtle top border/shadow for separation from the content above */
+    border-top: 4px solid #007bff; /* A nice blue accent line */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* OR, if the text itself has a specific class: */
-.footer-info {
-    width: 100%;
-    text-align: center;
+/* --- Target the container inside the footer (optional, but good practice) --- */
+.main-footer .container {
+    /* Optional: If you want to limit the maximum width of the content */
+    max-width: 1200px;
+    margin: 0 auto; /* This centers the container itself if max-width is set */
 }
-    }
 
-} 
+/* --- Target the paragraph element for specific text styling --- */
+.main-footer p {
+    /* Reset default margin on the paragraph */
+    margin: 0;
+    /* Optional: Make the text slightly bolder */
+    font-weight: 500;
+}
