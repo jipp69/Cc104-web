@@ -367,28 +367,9 @@ code {
     color: #0055a4;
 }
 
-/* ---------------------------------------------------- */
-/* 6. FOOTER STYLES (CORRECTED & ENHANCED) */
-/* ---------------------------------------------------- */
-footer {
-    /* Base footer styling */
-    background: var(--primary-color); 
-    color: white;
-    padding: 20px 0; /* Increased padding */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* Specific styling for the text inside the footer (BIGGER & CENTERED) */
-footer .container p {
-    font-size: 1.2rem; 
-    font-weight: 600; 
-    text-align: center;
-    margin: 0; 
-}
-
 
 /* ---------------------------------------------------- */
-/* 7. RESPONSIVENESS */
+/* 6. RESPONSIVENESS */
 /* ---------------------------------------------------- */
 
 @media (max-width: 900px) {
@@ -399,18 +380,15 @@ footer .container p {
         padding-right: 0;
     }
     .interactive-area {
-        flex-wrap: wrap; 
+        flex-wrap: wrap; /* Allow buttons/input to wrap on smaller screens */
     }
     .interactive-area button {
         flex-grow: 1;
     }
     .team-grid {
+        /* Switch to 2 columns on medium screens */
         grid-template-columns: repeat(2, 1fr);
     }
-    /* Mobile footer text should be slightly smaller */
-    footer .container p {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 600px) {
@@ -448,3 +426,4 @@ footer .container p {
         grid-template-columns: 1fr;
     }
 }
+ sorrhy this is the css
