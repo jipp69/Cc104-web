@@ -851,24 +851,24 @@ code {
         grid-template-columns: 1fr;
 
         /* --- Footer Styling for CC104 DSA Portfolio --- */
-.main-footer {
-    background: #333; /* Dark background */
-    color: #fff;      /* Light text */
-    padding: 1rem 0;   /* Vertical padding */
-    text-align: center; /* This centers the text */
+/* 1. Target the main footer element (if you have one) */
+footer {
+    /* Ensure the footer spans the full width */
+    width: 100%;
+    /* This command centers the text content horizontally */
+    text-align: center;
+    /* Optional: Add some basic styling */
+    padding: 10px 0; 
+    background-color: #f4f4f4; /* Light background for visibility */
+    color: #333;
+    /* You may need to set position: fixed/absolute depending on your layout */
 }
 
-/* Optional: To make sure the text container is centered if your main container has margins */
-.main-footer .container {
-    max-width: 1100px; /* Should match the width of the main .container */
-    margin: auto;
+/* OR, if the text itself has a specific class: */
+.footer-info {
+    width: 100%;
+    text-align: center;
 }
-
-.main-footer p {
-    margin: 0; /* Remove default paragraph margin */
-    font-size: 0.9rem;
-}
-
     }
 
 } 
