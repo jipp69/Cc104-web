@@ -1,6 +1,29 @@
 /* Custom Styles for CC105 Resource */
 
+html, body {
+    height: 100%;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.main-footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.main-footer p {
+    margin: 0;
+}
 
 :root {
 
