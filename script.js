@@ -46,7 +46,7 @@ function toggleExample(card, contentId) {
 
 // 1. STACK SIMULATION
 let stackArray = [];
-const MAX_SIZE = 10; 
+const MAX_SIZE = 5; 
 
 function initializeStack() {
     stackArray = [];
